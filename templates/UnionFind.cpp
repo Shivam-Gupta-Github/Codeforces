@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 class UnionFind {
     vector<int> parent, size;
     int componentCount;

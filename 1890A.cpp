@@ -29,29 +29,6 @@ using pll = pair<ll, ll>;
 #define per(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define sz(x) (int)(x).size()
 
-// Functions
-template <typename T>
-bool chmin(T &a, const T &b)
-{
-    if (a > b)
-    {
-        a = b;
-        return true;
-    }
-    return false;
-}
-
-template <typename T>
-bool chmax(T &a, const T &b)
-{
-    if (a < b)
-    {
-        a = b;
-        return true;
-    }
-    return false;
-}
-
 // Solver Function
 void solve() {
     int n = 0;

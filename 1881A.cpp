@@ -31,31 +31,29 @@ using pll = pair<ll, ll>;
 
 // Solver Function
 void solve() {
-    int n, a, b, c;
-    cin >> n >> a >> b >> c;
-    vector<int> cuts = {a, b, c};
-    vector<int> dp(n + 1, INT_MIN); // Initialize with INT_MIN
-    dp[0] = 0; // 0 length requires 0 cuts
-    
-    for (int i = 1; i <= n; i++) {
-        for (auto& cut: cuts) {
-            if (i - cut >= 0 && dp[i - cut] != INT_MIN) {
-                dp[i] = max(dp[i], 1 + dp[i - cut]);
-            }
+    int n, m;
+    string x, s;
+    cin >> n >> m >> x >> s;
+    bool flag = false;
+    for (int i = 0; i < 6; i++) {
+        if (x.find(s) != string::npos) {
+            cout << i;
+            flag = true;
+            break;
         }
+        x += x;
     }
-    cout << dp[n] << endl;
+    if (!flag) cout << -1;
 }
 
 int main()
 {
-    // int t;
-    // cin >> t; // for multi-test case problems.
-    // while (t--)
-    // {
-    //     solve();
-    //     cout << endl;
-    // }
-    solve();
+    int t;
+    cin >> t; // for multi-test case problems.
+    while (t--)
+    {
+        solve();
+        cout << endl;
+    }
     return 0;
 }
