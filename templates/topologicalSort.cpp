@@ -1,3 +1,6 @@
+// Ee can find topological sort only of a directed acyclic graph (DAG).
+// Time Complexity: O(V + E)
+// Space Complexity: O(V + E)
 void dfs(vector<vector<int>> &adj, int u, vector<int> &visited, stack<int> &stk, bool &cycle) {
     visited[u] = 0;
     for (auto &v : adj[u]) {
