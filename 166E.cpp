@@ -29,23 +29,18 @@ using pll = pair<ll, ll>;
 #define per(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define sz(x) (int)(x).size()
 
+int MOD = 1e9 + 7;
+
 // Solver Function
-void solve() {
-    int n, a, b, c;
-    cin >> n >> a >> b >> c;
-    int dp[n + 1] = {INF};
-    dp[0] = 0;
-    for (int i = 1; i <= n; i++) {
-        int result = -INF;
-        if (i - a >= 0)
-            result = max(result, dp[i - a] + 1);
-        if (i - b >= 0)
-            result = max(result, dp[i - b] + 1);
-        if (i - c >= 0)
-            result = max(result, dp[i - c] + 1);
-        dp[i] = result;
+void solve(int n) {
+    vector<long long> dpA(n + 1), dpD(n + 1);
+    dpD[0] = 1;
+    dpA[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        dpD[i] = (3 * dpA[i - 1]) % MOD;
+        dpA[i] = (2* dpA[i - 1] + dpD[i - 1]) % MOD;
     }
-    cout << dp[n];
+    cout << dpD[n];
 }
 
 int main()
@@ -57,6 +52,8 @@ int main()
     //     solve();
     //     cout << endl;
     // }
-    solve();
+    int n;
+    cin >> n;
+    solve(n);
     return 0;
 }
