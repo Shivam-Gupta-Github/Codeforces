@@ -30,24 +30,32 @@ using pll = pair<ll, ll>;
 #define sz(x) (int)(x).size()
 
 // Solver Function
-void solve() {
+void solve()
+{
     int n, m;
     string x, s;
     cin >> n >> m >> x >> s;
     bool flag = false;
-    for (int i = 0; i < 6; i++) {
-        if (x.find(s) != string::npos) {
+    for (int i = 0; i < 6; i++)
+    {
+        if (x.find(s) != string::npos)
+        {
             cout << i;
             flag = true;
             break;
         }
         x += x;
     }
-    if (!flag) cout << -1;
+    if (!flag)
+        cout << -1;
 }
 
 int main()
 {
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     int t;
     cin >> t; // for multi-test case problems.
     while (t--)
