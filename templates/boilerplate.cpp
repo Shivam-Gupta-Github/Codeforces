@@ -29,14 +29,23 @@ using pll = pair<ll, ll>;
 #define per(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define sz(x) (int)(x).size()
 
+// Fast I/O
+#define FAST_IO                  \
+    ios::sync_with_stdio(false); \
+    cin.tie(nullptr);
 
 // Solver Function
-void solve() {
-    
+void solve()
+{
 }
 
 int main()
 {
+    FAST_IO;
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     int t;
     cin >> t; // for multi-test case problems.
     while (t--)

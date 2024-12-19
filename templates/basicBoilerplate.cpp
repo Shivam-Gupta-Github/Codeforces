@@ -5,15 +5,32 @@ using namespace std;
 const int INF = 1e9 + 7;
 const long long LINF = 1e18 + 7;
 
-// Solver Function
-void solve()
-{
-}
+// Type Aliases
+using ll = long long;
+using pii = pair<int, int>;
+
+// Macros
+#define all(v) (v).begin(), (v).end()
+#define F first
+#define S second
+
+// Fast I/O
+#define FAST_IO                  \
+    ios::sync_with_stdio(false); \
+    cin.tie(nullptr);
+
+void solve() {}
 
 int main()
 {
+    // FAST_IO;
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
     int t;
-    cin >> t; // for multi-test case problems.
+    cin >> t;
     while (t--)
     {
         solve();
